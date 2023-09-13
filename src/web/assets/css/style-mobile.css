@@ -1,7 +1,40 @@
 /* FUCK YOU MOBILE USER */
 
-/* @media screen and (max-width: 600px) {
-    body {
-        background-color: red;
+@media only screen and (max-width: 768px) {
+    :root {
+        --page-size: 500px;
     }
-} */
+
+    .story-hr {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    :root {
+        --page-size: 300px;
+    }
+
+
+    .story-title h1 {
+        font-size: 2rem;
+    }
+
+    .story-title h4 {
+        font-size: 0.9rem;
+        opacity: 75%;
+    }
+
+    .story-hr {
+        width: 100px;
+    }
+
+    .story-decor {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .story-next {
+        font-size: 1rem;
+    }
+}
