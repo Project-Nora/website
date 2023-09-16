@@ -34,9 +34,15 @@
 
         <!-- Intro [Preface] -->
         <div class="chapter-links">
-            <h3> <a class="no-link" href="/chapters/intro.html">* Chapter 0: Intro </a> </h3>
+            <!-- <h3> <a class="no-link" href="/chapters/intro.html">* Chapter 0: Intro </a> </h3> -->
+            @for chapter in chapters
+
+            <h3> <a class="no-link" href="/chapters/${chapter.number}-${chapter.episode}.html">* Chapter ${chapter.number}: ${chapter.short_title} </a> </h3>
+
+            @end
         </div>
     </div>
+
 
     <!-- Temp: Move this -->
     <style>

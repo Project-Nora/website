@@ -135,7 +135,6 @@ h5 {
 }
 
 .story-content-hack {
-    position: absolute;
     margin-top: -30px;
     width: var(--page-size);
     font-family: 'PT Serif', serif;

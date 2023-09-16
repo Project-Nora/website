@@ -1,5 +1,7 @@
 module main
 
+import generator
+
 fn main() {
-	println('Hello World!')
+	generator.create()
 }

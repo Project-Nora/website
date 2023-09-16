@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- File(s) -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style-mobile.css" />
+
+    <!-- METAs -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2D4263" />
+    <meta property="og:title" content="Nora's Journal" />
+    <meta property="og:description" content="Chapter @{chapter.number}: @{chapter.short_title}" />
+
+    <!-- Title -->
+    <title> Nora's Journal - [@{chapter.short_title}] </title>
+</head>
+
+<body>
+    <!-- TODO: Header -->
+    <!-- <br /><br /> -->
+    <div class="header">
+        <div class="header-logo">
+            <a class='no-link' href="/">Nora's Journal</a>
+        </div>
+    </div>
+
+    <!-- Cover -->
+    <div class="story-cover" style='opacity: 1' tabindex="99"></div>
+
+
+    <div class="story-body absolute-center">
+        <!-- Title -->
+        <div class="story-title">
+            <h4> @{chapter.characters} </h4>
+            <h1> @{chapter.title} </h1>
+            <hr />
+            <h3> Written by @{chapter.author} </h3>
+        </div>
+
+        <!-- Chapter(s) -->
+        <div class="story-chapter">
+            <!-- Chapter title -->
+            <h1 id="title">
+                <a href="#title" class="story-chapter-title-anchor">#</a> <u>@{chapter.name}</u> – “@{chapter.subject}”
+            </h1>
+
+            <!-- Content -->
+            <div class="story-decor">※　※　※　※　※　※　※　※　※　※　※　※</div> <br />
+            <div class="story-content">
+                <!-- Insert Chapter code here -->
+                @{chapter.html}
+            </div>
+        </div>
+
+        <!-- End chapter -->
+        <div class="story-decor">※　※　※　※　※　※　※　※　※　※　※　※</div> <br />
+
+        <!-- Next Chapter -->
+        <div class="story-next">
+            → Next Chapter: [Chapter 1 - Meets]
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>
