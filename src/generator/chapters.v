@@ -22,8 +22,10 @@ pub mut:
 	author      string [Author]
 	tags        string [Tags]
 	date        string [Date]
+	header      string [HeaderImage]
 	// HTML
-	html string
+	html         string
+	next_chapter &Chapter = unsafe { nil }
 }
 
 // Parse
@@ -59,7 +61,7 @@ pub fn Chapter.parse(path string) Chapter {
 	$for field in Chapter.fields {
 		// Loop thru all the metadata and see if we find any matching
 		for meta in metadata {
-			if field.attrs.len > 0 && meta[0].starts_with(field.attrs[0]) {
+			if field.attrs.len > 0 && meta[0] == field.attrs[0] {
 				$if field.typ is string {
 					chp.$(field.name) = meta[1]
 				} $else $if field.typ is int {
@@ -83,6 +85,12 @@ pub fn get_chapters() []Chapter {
 
 	for file in os.glob(os.join_path(c_root_chapter_source, '*.html')) or { [] } {
 		chapters << Chapter.parse(file)
+	}
+
+	for i := 0; i < chapters.len; i++ {
+		if i + 1 < chapters.len && chapters[i].id == chapters[i + 1].id - 1 {
+			chapters[i].next_chapter = unsafe { &chapters[i + 1] }
+		}
 	}
 
 	return chapters
