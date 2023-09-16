@@ -27,7 +27,7 @@
     </div>
 
     <!-- Cover -->
-    <div class="story-cover" style='opacity: 1' tabindex="99"></div>
+    <div class="story-cover" style='opacity: 1;background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, #000000 100%), url("@{chapter.header}");' tabindex="99"></div>
 
 
     <div class="story-body absolute-center">
@@ -58,9 +58,19 @@
         <div class="story-decor">※　※　※　※　※　※　※　※　※　※　※　※</div> <br />
 
         <!-- Next Chapter -->
+        @if !isnil(chapter.next_chapter)
         <div class="story-next">
-            → Next Chapter: [Chapter 1 - Meets]
+            <a class="link-when-hovered" href="/chapters/${chapter.next_chapter.number}-${chapter.next_chapter.episode}.html">
+                → Next Chapter: [Chapter ${chapter.next_chapter.number} - ${chapter.next_chapter.title}]
+            </a>
         </div>
+        @else
+        <div class="story-middle">
+            <a style="font-family: 'Old Standard TT', sans-serif;">
+                <h1 style="margin: 0 0 0 0">To be continued.</h1>
+            </a>
+        </div>
+        @end
 
     </div>
     </div>
