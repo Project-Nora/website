@@ -1,13 +1,16 @@
 # The website
-* Currently is hand-written, not the best thing ever but it works for now.
+* Partly hand-written novel generator.
 
 # Chapter(s) done
 * Intro
 
+# Chapter(s) In Progress
+* Chapter 1
+
 # Chapter(s) not done
-* Everything else
+* Chapter 2
 
 # TODO
 * Generalize website design
 * Generalize text design
-* HTML generator.
+* Find out a way to common-alize custom html tags.
